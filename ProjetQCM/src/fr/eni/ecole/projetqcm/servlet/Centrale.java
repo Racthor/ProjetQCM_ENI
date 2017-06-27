@@ -50,11 +50,11 @@ public class Centrale extends HttpServlet {
 		}
 		session = request.getSession();		
 		response.setContentType("text/html");
-//		RequestDispatcher dispatcher = null;
-//		dispatcher = request.getRequestDispatcher("/html/home.html");
-//		dispatcher.include(request, response);
+		RequestDispatcher dispatcher = null;
+		dispatcher = request.getRequestDispatcher("/jsp/header.jsp");
+		dispatcher.include(request, response);
 
-		this.getServletContext().getRequestDispatcher( "/jsp/header.jsp" ).forward( request, response );
+//		this.getServletContext().getRequestDispatcher( "/jsp/header.jsp" ).forward( request, response );
 		
 	}
 }

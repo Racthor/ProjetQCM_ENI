@@ -25,6 +25,10 @@
     <display-name>Connexion</display-name>
     <servlet-name>Connexion</servlet-name>
     <servlet-class>fr.eni.ecole.projetqcm.servlet.Connexion</servlet-class>
+    <init-param>
+      <param-name>connectionString</param-name>
+      <param-value>jdbc:sqlserver://localhost:1433;databaseName=qcm;user=sa;password=Pa$$w0rd;</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>Connexion</servlet-name>

@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class Centrale
  */
-@WebServlet("/")
 public class Centrale extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

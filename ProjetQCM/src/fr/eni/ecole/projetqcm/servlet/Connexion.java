@@ -81,11 +81,11 @@ public class Connexion extends HttpServlet {
 				if(statut.equals("personnel_ENI")){
 					sb.append("Statut : personnel_ENI");
 					//forward
-					request.getRequestDispatcher( "/jsp/formateurEni.jsp" ).forward( request, response );
+					request.getRequestDispatcher( "/Home" ).forward( request, response );
 				} else if (statut.equals("formateur")){
 					sb.append("plop");
 					//forward
-					request.getRequestDispatcher( "/jsp/formateurEni.jsp" ).forward( request, response );
+//					request.getRequestDispatcher( "/jsp/formateurEni.jsp" ).forward( request, response );
 				} // ...
 			} else {
 				// forward home

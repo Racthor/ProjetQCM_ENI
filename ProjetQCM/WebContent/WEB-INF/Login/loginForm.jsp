@@ -2,14 +2,21 @@
 	<div class="container">
 		<div class="row">
 		    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-				<form role="form" class="register-form">
+		    
+<!-- 		<form action="Connexion" method="post"> -->
+<!-- 			Login : <input type="textArea" name="login"></input><br/> -->
+<!-- 			Password : <input type="textArea" name="password"></input><br/> -->
+<!-- 			<input type="submit" value="Valider" name="validation"/> -->
+<!-- 		</form> -->
+		    
+				<form role="form" class="register-form" action="Connexion" method="post">
 					<h2>Connexion </h2>
 					<hr class="colorgraph">
 					<div class="form-group">
-						<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+						<input type="email" name="login" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control input-lg" id="exampleInputPassword1" placeholder="Password">
+						<input type="password" name="password" class="form-control input-lg" id="exampleInputPassword1" placeholder="Password">
 					</div>
 					<div class="row">
 						<div class="col-xs-4 col-sm-3 col-md-3">
@@ -23,9 +30,6 @@
 					<div class="row">
 						<div class="col-xs-12 col-md-6">
 							<input type="submit" value="Connexion" class="btn btn-primary btn-block btn-lg" tabindex="7">
-						</div>
-						<div class="col-xs-12 col-md-6">Vous n'avez pas de compte?<br /> 
-							<a href="register.html">Enregistrez-vous</a>
 						</div>
 					</div>
 				</form>

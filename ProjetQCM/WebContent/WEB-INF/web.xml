@@ -9,6 +9,7 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -18,7 +19,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Centrale</servlet-name>
-    <url-pattern>/</url-pattern>
+    <url-pattern>/Centrale</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

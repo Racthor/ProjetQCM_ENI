@@ -18,7 +18,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Centrale</servlet-name>
-    <url-pattern>/centrale</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

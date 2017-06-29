@@ -62,10 +62,6 @@ public class Connexion extends HttpServlet {
 			
 			PreparedStatement rechercheUser = cnx.prepareStatement("SELECT * FROM Users WHERE email = ? AND password = ?");
 
-			/*
-			 * Le login est supposé être unique, actuellement, ce n'est pas tout à fait le cas dans la bdd,
-			 * à modifier ?
-			 */
 			rechercheUser.setString(1, request.getParameter("login"));
 			rechercheUser.setString(2, request.getParameter("password"));
 
@@ -75,21 +71,26 @@ public class Connexion extends HttpServlet {
 			// si Eni : redirect vers personnelEni.jsp ou formateurEni.jsp
 			// Sinon : retour vers la page d'accueil + message d'erreur
 			if (rs.next()) { // y a t'il une réponse à la requête
-				sb.append("<br/>Login: ").append(rs.getString(4)); // 4ième valeur dans la table
-				sb.append("<br/>Mot de passe: ").append(rs.getString(5)); // 5ième valeur dans la table
-				String statut = rs.getString(6);
+				sb.append("<br/>Login: ").append(rs.getString(3)); // 4ième valeur dans la table
+				sb.append("<br/>Mot de passe: ").append(rs.getString(4)); // 5ième valeur dans la table
+				String statut = rs.getString(5);
 				if(statut.equals("personnel_ENI")){
 					sb.append("Statut : personnel_ENI");
 					//forward
 					request.getRequestDispatcher( "/Home" ).forward( request, response );
 				} else if (statut.equals("formateur")){
+					request.setAttribute("formateur", "true");
+					//forward
+					request.getRequestDispatcher( "/Home" ).forward( request, response );
+				} else if (statut.equals("candidat")){
 					sb.append("plop");
 					//forward
-//					request.getRequestDispatcher( "/jsp/formateurEni.jsp" ).forward( request, response );
-				} // ...
+//					request.getRequestDispatcher( "/jsp/candidat.jsp" ).forward( request, response );
+				}
 			} else {
 				// forward home
-				response.getWriter().append("Je suis pas sur une page là !");
+				request.setAttribute("erreur", "loginPassword");
+				request.getRequestDispatcher( "/Centrale" ).forward( request, response );
 			}
 
 			

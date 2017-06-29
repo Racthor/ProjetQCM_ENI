@@ -41,7 +41,7 @@ public class Centrale extends HttpServlet {
 
 	private void doIt(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session;
-		if (request.getParameter("session") !=null) {
+		if (request.getParameter("session") != null) {
 			session = request.getSession(false);
 			if (session != null) {
 				session.invalidate();
@@ -49,12 +49,12 @@ public class Centrale extends HttpServlet {
 		}
 		session = request.getSession();		
 		response.setContentType("text/html");
-//		RequestDispatcher dispatcher = null;
-//		dispatcher = request.getRequestDispatcher("/jsp/header.jsp");
-//		dispatcher.include(request, response);
+		request.setAttribute("login",false);
 		
-		request.setAttribute("login",true);
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/Login/login.jsp" ).forward( request, response );
+		RequestDispatcher dispatcher = null;
+//		dispatcher = request.getRequestDispatcher("/jsp/header.jsp");
+		dispatcher = request.getRequestDispatcher("/WEB-INF/Login/login.jsp");
+		dispatcher.include(request, response);
 		
 	}
 }

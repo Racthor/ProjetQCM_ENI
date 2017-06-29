@@ -26,9 +26,7 @@ public class Home extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String paramAuteur = request.getParameter("auteur");
-		String message = "Transmission donnees ok !" + paramAuteur;
-		request.setAttribute("login", false);
+		request.setAttribute("login", "true");
 		this.getServletContext().getRequestDispatcher( "/WEB-INF/Home/home.jsp" ).forward( request, response );
 	}
 

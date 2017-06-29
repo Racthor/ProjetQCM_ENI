@@ -1,4 +1,5 @@
 <!-- start header -->
+
 <header>
 	<div class="top">
 		<div class="container">
@@ -22,7 +23,7 @@
 			</div>
 		</div>
 	</div>	
-	<% if ( request.getAttribute( "login" ).equals("true") ){%>	
+	<% if ( "true".equals(request.getAttribute( "login" )) ){%>	
     <div class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
